@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pixelfit - Log In</title>
+    <title>Pixelfit - Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="assets.js"></script>
+    <script defer src="profile.js"></script>
   </head>
   <body>
     <div class="background">
@@ -33,38 +34,26 @@
           <img class="brand__logo" src="https://raw.githubusercontent.com/desto374/Image-Resizer/main/Image/PixelFit%20Logo.png" alt="Pixelfit logo" />
           <span>Pixelfit</span>
         </div>
-        <a class="btn btn--ghost" href="index.html">Back to app</a>
+        <a class="btn btn--ghost" href="Landing.html">Back to app</a>
       </div>
 
-      <section class="panel auth-card">
+      <section class="panel user-panel" id="userPanel" hidden>
         <div class="panel__header">
           <div>
-            <h2>Welcome back</h2>
-            <p>Log in to manage your releases and exports.</p>
+            <h2>Your profile</h2>
+            <p id="userGreeting">Signed in.</p>
           </div>
         </div>
-
-        <form class="auth-form" id="loginForm">
-          <button class="btn btn--google" type="button">
-            <span class="btn__dot"></span>
-            Continue with Google
-          </button>
-          <div class="auth-divider"><span>or use email</span></div>
-          <div class="auth-message" id="authMessage" role="status" aria-live="polite"></div>
+        <form class="auth-form" id="usernameForm">
           <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@pixelfit.com" required />
+            <label for="usernameInput">Username</label>
+            <input id="usernameInput" type="text" placeholder="yourname" required />
           </div>
-          <div class="field">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="••••••••" required />
-          </div>
-          <button class="cta" type="submit">Log in</button>
-          <p class="terms">By continuing, you agree to Pixelfit’s Terms &amp; Conditions and Privacy Policy.</p>
-          <p class="auth-footnote">New to Pixelfit? <a href="signup.html">Create an account</a>.</p>
+          <button class="cta" type="submit">Update username</button>
+          <button class="btn btn--ghost signout-btn" type="button" id="signOutBtn">Sign out</button>
+          <p class="auth-message" id="usernameMessage" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
-    <script defer src="auth.js"></script>
   </body>
 </html>
