@@ -688,6 +688,22 @@ h1 {
 @media (max-width: 720px) {
   .topbar {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .profile__text {
+    text-align: left;
+  }
+
+  .profile__avatar {
+    order: -1;
   }
 
   .auth-actions {
