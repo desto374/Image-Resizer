@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Resizer for Music & Social Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="assets.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body data-auth-toggle="off">
+    <div class="background">
+      <div class="pixels"></div>
+      <div class="grain"></div>
+      <div class="orb orb--one"></div>
+      <div class="orb orb--two"></div>
+      <div class="orb orb--three"></div>
+      <div class="pixel pixel--one"></div>
+      <div class="pixel pixel--two"></div>
+      <div class="pixel pixel--three"></div>
+      <div class="pixel pixel--four"></div>
+      <div class="pixel pixel--five"></div>
+    </div>
+
+    <main class="page">
+      <div class="topbar">
+        <div class="brand">
+          <img class="brand__logo" src="/Image/PixelFit Logo.png" alt="Pixelfit logo" />
+          <span>Pixelfit</span>
+        </div>
+        <div class="auth-actions" id="authActions">
+          <a class="btn btn--ghost" href="login.html">Log in</a>
+          <a class="btn btn--solid" href="signup.html">Sign up</a>
+        </div>
+      </div>
+      <header class="hero">
+        <p class="eyebrow">Creators · Musicians · Ready-to-post sizes</p>
+        <h1>Image Resizer for Music & Social Media</h1>
+        <p class="lede">
+          Drop your artwork, name your release folder, and instantly get every platform size you need. Perfect
+          for cover art, promos, and social posts.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <h2>Upload your artwork</h2>
+            <p>PNG or JPG. Batch multiple releases at once.</p>
+          </div>
+          <label class="file-pill" for="fileInput">
+            Select artwork
+            <input id="fileInput" type="file" accept="image/png, image/jpeg" multiple />
+          </label>
+        </div>
+
+        <div id="fileList" class="file-list">
+          <div class="empty-state">No artwork yet. Drop files here or tap “Select artwork.”</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <h2>Generate creator-ready packs</h2>
+            <p>Each upload becomes a ZIP with every platform size.</p>
+          </div>
+          <button id="processBtn" class="cta" type="button">Create my resized packs</button>
+        </div>
+
+        <div class="status">
+          <div class="progress">
+            <div id="progressFill" class="progress__fill"></div>
+          </div>
+          <p id="statusText">Ready for your next drop.</p>
+        </div>
+
+        <div id="downloadArea" class="downloads"></div>
+      </section>
+    </main>
+  </body>
+</html>
