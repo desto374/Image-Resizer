@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pixelfit - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="assets.js"></script>
+    <script defer src="profile.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="pixels"></div>
+      <div class="grain"></div>
+      <div class="orb orb--one"></div>
+      <div class="orb orb--two"></div>
+      <div class="orb orb--three"></div>
+      <div class="pixel pixel--one"></div>
+      <div class="pixel pixel--two"></div>
+      <div class="pixel pixel--three"></div>
+      <div class="pixel pixel--four"></div>
+      <div class="pixel pixel--five"></div>
+    </div>
+
+    <main class="page">
+      <div class="topbar">
+        <div class="brand">
+          <img class="brand__logo" src="https://raw.githubusercontent.com/desto374/Image-Resizer/main/Image/PixelFit%20Logo.png" alt="Pixelfit logo" />
+          <span>Pixelfit</span>
+        </div>
+        <a class="btn btn--ghost" href="index.html">Back to app</a>
+      </div>
+
+      <section class="panel user-panel" id="userPanel" hidden>
+        <div class="panel__header">
+          <div>
+            <h2>Your profile</h2>
+            <p id="userGreeting">Signed in.</p>
+          </div>
+        </div>
+        <form class="auth-form" id="usernameForm">
+          <div class="field">
+            <label for="usernameInput">Username</label>
+            <input id="usernameInput" type="text" placeholder="yourname" required />
+          </div>
+          <button class="cta" type="submit">Update username</button>
+          <button class="btn btn--ghost signout-btn" type="button" id="signOutBtn">Sign out</button>
+          <p class="auth-message" id="usernameMessage" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

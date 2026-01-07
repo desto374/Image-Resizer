@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pixelfit - Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="assets.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="pixels"></div>
+      <div class="grain"></div>
+      <div class="orb orb--one"></div>
+      <div class="orb orb--two"></div>
+      <div class="orb orb--three"></div>
+      <div class="pixel pixel--one"></div>
+      <div class="pixel pixel--two"></div>
+      <div class="pixel pixel--three"></div>
+      <div class="pixel pixel--four"></div>
+      <div class="pixel pixel--five"></div>
+    </div>
+
+    <main class="page">
+      <div class="topbar">
+        <div class="brand">
+          <img class="brand__logo" src="https://raw.githubusercontent.com/desto374/Image-Resizer/main/Image/PixelFit%20Logo.png" alt="Pixelfit logo" />
+          <span>Pixelfit</span>
+        </div>
+        <a class="btn btn--ghost" href="index.html">Back to app</a>
+      </div>
+
+      <section class="panel auth-card">
+        <div class="panel__header">
+          <div>
+            <h2>Join Pixelfit</h2>
+            <p>Build a workspace for every drop, project, and campaign.</p>
+          </div>
+        </div>
+
+        <form class="auth-form" id="signupForm">
+          <button class="btn btn--google" type="button">
+            <span class="btn__dot"></span>
+            Continue with Google
+          </button>
+          <div class="auth-divider"><span>or create with email</span></div>
+          <div class="auth-message" id="authMessage" role="status" aria-live="polite"></div>
+          <div class="field">
+            <label for="name">Artist or team name</label>
+            <input id="name" type="text" placeholder="Your stage name" required />
+          </div>
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="pixelfitname" required />
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+              <option value="" selected disabled>Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@pixelfit.com" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Create a password" required />
+          </div>
+          <button class="cta" type="submit">Create account</button>
+          <p class="terms">By continuing, you agree to Pixelfit’s Terms &amp; Conditions and Privacy Policy.</p>
+          <p class="auth-footnote">Already have an account? <a href="login.html">Log in</a>.</p>
+        </form>
+      </section>
+    </main>
+    <script defer src="auth.js"></script>
+  </body>
+</html>
