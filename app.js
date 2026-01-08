@@ -1,8 +1,6 @@
 const IS_LOCAL =
   location.hostname === "localhost" || location.hostname === "127.0.0.1";
-const API_BASE = IS_LOCAL
-  ? "http://127.0.0.1:8000"
-  : "https://image-resizer-rxnr.onrender.com";
+const API_BASE = IS_LOCAL ? "http://127.0.0.1:8000" : window.location.origin;
 
 const profile = document.getElementById("profile");
 const profileUsername = document.getElementById("profileUsername");

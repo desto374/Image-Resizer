@@ -243,6 +243,12 @@ body {
   justify-content: flex-end;
 }
 
+.nav-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -707,6 +713,11 @@ h1 {
   }
 
   .auth-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
     justify-content: flex-start;
     flex-wrap: wrap;
   }

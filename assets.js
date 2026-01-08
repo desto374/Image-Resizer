@@ -13,4 +13,29 @@ document.addEventListener("DOMContentLoaded", () => {
       logo.src = PIXELFIT_ASSETS.logoUrl;
     }
   });
+
+  const homeBtn = document.getElementById("homeBtn");
+  const resizerBtn = document.getElementById("resizerBtn");
+  if (!homeBtn && !resizerBtn) {
+    return;
+  }
+
+  fetch(`${window.location.origin}/api/me`, { credentials: "include" })
+    .then((response) => {
+      const isLoggedIn = response.ok;
+      if (homeBtn) {
+        homeBtn.href = isLoggedIn ? "Landing.html" : "index.html";
+      }
+      if (resizerBtn) {
+        resizerBtn.href = isLoggedIn ? "Landing.html" : "login.html";
+      }
+    })
+    .catch(() => {
+      if (homeBtn) {
+        homeBtn.href = "index.html";
+      }
+      if (resizerBtn) {
+        resizerBtn.href = "login.html";
+      }
+    });
 });
