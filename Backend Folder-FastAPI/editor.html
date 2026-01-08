@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pixelfit Photo Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.min.css"
+    />
+    <style>
+      .editor-panel {
+        gap: 16px;
+      }
+
+      .editor-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .editor-wrap {
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(12, 12, 12, 0.08);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      #tui-image-editor {
+        height: 640px;
+      }
+
+      .editor-status {
+        margin-top: 12px;
+        font-size: 0.95rem;
+        color: var(--muted, #4a4a4a);
+      }
+
+      @media (max-width: 720px) {
+        #tui-image-editor {
+          height: 520px;
+        }
+      }
+    </style>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.6.0/fabric.min.js"></script>
+    <script defer src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.min.js"></script>
+    <script defer src="editor.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="pixels"></div>
+      <div class="grain"></div>
+      <div class="orb orb--one"></div>
+      <div class="orb orb--two"></div>
+      <div class="orb orb--three"></div>
+      <div class="pixel pixel--one"></div>
+      <div class="pixel pixel--two"></div>
+      <div class="pixel pixel--three"></div>
+      <div class="pixel pixel--four"></div>
+      <div class="pixel pixel--five"></div>
+    </div>
+
+    <main class="page">
+      <div class="topbar">
+        <div class="brand">
+          <img
+            class="brand__logo"
+            src="https://raw.githubusercontent.com/desto374/Image-Resizer/main/Image/PixelFit%20Logo.png"
+            alt="Pixelfit logo"
+          />
+          <span>Pixelfit</span>
+        </div>
+        <a class="btn btn--ghost" href="Landing.html">Back to app</a>
+      </div>
+
+      <header class="hero">
+        <p class="eyebrow">Create, edit, export</p>
+        <h1>Pixelfit Photo Editor</h1>
+        <p class="lede">
+          Upload your artwork, make edits with pro tools, then export and generate every size in one go.
+        </p>
+      </header>
+
+      <section class="panel editor-panel">
+        <div class="panel__header">
+          <div>
+            <h2>Edit your artwork</h2>
+            <p>Crop, rotate, draw, add text, and apply filters before export.</p>
+          </div>
+          <div class="editor-toolbar">
+            <label class="file-pill" for="editorUpload">
+              Upload image
+              <input id="editorUpload" type="file" accept="image/png, image/jpeg" />
+            </label>
+            <button id="exportBtn" class="cta" type="button">Export & Generate Sizes</button>
+          </div>
+        </div>
+
+        <div class="editor-wrap">
+          <div id="tui-image-editor"></div>
+        </div>
+        <p id="editorStatus" class="editor-status">Upload an image to start editing.</p>
+      </section>
+    </main>
+  </body>
+</html>
